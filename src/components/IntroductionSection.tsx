@@ -13,7 +13,7 @@ export function IntroductionSection() {
           sala!
         </p>
         <p className="mt-2 text-2xl text-gray-primary"></p>
-        <button className="mt-16 bg-red-primary text-white py-4 px-10 rounded-2xl text-xl font-bold hover:bg-red-secondary">
+        <button className="mt-16 bg-red-primary text-white py-4 px-10 rounded-2xl text-xl font-bold hover:bg-red-secondary ease-in-out  duration-200">
           Acessar meus horários
         </button>
       </div>

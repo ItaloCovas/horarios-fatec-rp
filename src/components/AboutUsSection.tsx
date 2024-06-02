@@ -1,6 +1,8 @@
+import { AboutCard } from './AboutCard';
+
 export function AboutUsSection() {
   return (
-    <section className="flex justify-center flex-col md:justify-normal px-10 md:px-20 py-28 gap-x-10 pt-20">
+    <section className="flex justify-center flex-col md:justify-normal px-10 md:px-20 py-16 gap-x-10 pt-20 pb-16">
       <h1 className="text-center text-4xl font-bold text-[#303031]">
         Simples, rápido e fluido.
       </h1>
@@ -9,34 +11,35 @@ export function AboutUsSection() {
         salas na FATEC Ribeirão Preto.
       </p>
 
-      <div className="gap-x-6 flex justify-center items-center">
-        <div className="flex items-center mt-14 rounded-lg max-w-[400px] shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-          <div className="flex flex-col gap-y-5 items-center justify-center bg-white px-6 py-16">
-            <div className="w-[80px] h-[80px] rounded-full bg-[#F3F0EA] flex items-center justify-center">
-              icone
-            </div>
-
-            <h2>Facilidade no acesso</h2>
-            <p>
-              Com apenas seu RA e sua senha, tenha tudo disponível quando
-              quiser.
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center mt-14 rounded-lg max-w-[400px] shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-          <div className="flex flex-col gap-y-5 items-center justify-center bg-white px-6 py-16">
-            <div className="w-[80px] h-[80px] rounded-full bg-[#F3F0EA] flex items-center justify-center">
-              icone
-            </div>
-
-            <h2>Facilidade no acesso</h2>
-            <p>
-              Com apenas seu RA e sua senha, tenha tudo disponível quando
-              quiser.
-            </p>
-          </div>
-        </div>
+      <div
+        className="gap-x-6 flex justify-center items-center flex-wrap"
+        id="about"
+      >
+        <AboutCard
+          title="Facilidade no acesso"
+          description="Com apenas seu RA e sua senha, tenha tudo disponível quando quiser."
+          icon="signIn"
+        />
+        <AboutCard
+          title="Facilidade no acesso"
+          description="Com apenas seu RA e sua senha, tenha tudo disponível quando quiser."
+          icon="clarity"
+        />
+        <AboutCard
+          title="Facilidade no acesso"
+          description="Com apenas seu RA e sua senha, tenha tudo disponível quando quiser."
+          icon="padLock"
+        />
       </div>
+
+      <h1 className="text-center text-4xl font-bold text-[#303031] mt-20">
+        Ajude a melhorar o projeto!
+      </h1>
+      <p className="text-center mt-6 text-xl">
+        Como sempre gostamos de iniciativas de código livre (open source), temos
+        o repositório de forma aberta para que todos possam ver o código e
+        sugerir alterações ou novas implementações.
+      </p>
     </section>
   );
 }
