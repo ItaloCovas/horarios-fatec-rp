@@ -11,6 +11,7 @@ export function Footer() {
           <a
             className="p-2 cursor-pointer  hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out"
             href="http://www.fatecrp.edu.br/"
+            target="_blank"
           >
             FATEC
           </a>

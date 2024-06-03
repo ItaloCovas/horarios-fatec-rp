@@ -1,3 +1,4 @@
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { MainContentWrapper } from './components/MainContentWrapper';
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <Header />
       <MainContentWrapper />
+      <Footer />
     </>
   );
 }
