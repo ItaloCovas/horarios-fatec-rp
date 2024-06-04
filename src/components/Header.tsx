@@ -2,6 +2,7 @@ import { IoIosMenu } from 'react-icons/io';
 import { Logo } from './Logo';
 import { useState } from 'react';
 import { Sidebar } from './Sidebar';
+import { SignInDialog } from './SignInDIalog/SignInDialog';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -38,9 +39,7 @@ export function Header() {
             Contribuir
           </a>
           <li>
-            <button className="text-red-primary py-2 px-4 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary">
-              ENTRAR
-            </button>
+            <SignInDialog />
           </li>
         </ul>
       </nav>
