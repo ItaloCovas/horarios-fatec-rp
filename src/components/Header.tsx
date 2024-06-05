@@ -2,21 +2,23 @@ import { IoIosMenu } from 'react-icons/io';
 import { Logo } from './Logo';
 import { useState } from 'react';
 import { Sidebar } from './Sidebar';
-import { SignInDialog } from './SignInDIalog/SignInDialog';
+import { SignInDialog } from './SignInDialog/SignInDialog';
+import { useDialog } from '../context/DialogContext/useDialog';
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { closeDialog, open, openDialog } = useDialog();
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   function handleOpen() {
-    setIsOpen(true);
+    setSidebarOpen(true);
   }
 
   function handleClose() {
-    setIsOpen(false);
+    setSidebarOpen(false);
   }
   return (
     <header className="flex items-center justify-between py-8 px-10 pr-4 md:pr-10 md:px-20 text-xl border-b-[1px] border-gray-300">
-      <Sidebar isOpen={isOpen} onClose={handleClose} />
+      <Sidebar isOpen={sidebarOpen} onClose={handleClose} />
       <Logo />
       <nav className="flex items-center">
         <IoIosMenu
@@ -39,10 +41,20 @@ export function Header() {
             Contribuir
           </a>
           <li>
-            <SignInDialog />
+            <button
+              onClick={openDialog}
+              className="text-red-primary py-2 px-4 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary"
+            >
+              ENTRAR
+            </button>
           </li>
         </ul>
       </nav>
+      <SignInDialog
+        open={open}
+        openDialog={openDialog}
+        closeDialog={closeDialog}
+      />
     </header>
   );
 }

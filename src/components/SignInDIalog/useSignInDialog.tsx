@@ -14,8 +14,6 @@ export function useSignInDialog() {
     register,
     handleSubmit: hookFormSubmit,
     formState: { errors },
-
-    clearErrors,
     reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -42,6 +40,6 @@ export function useSignInDialog() {
     hookFormSubmit,
     errors,
     handleSubmit,
-    clearErrors,
+    reset,
   };
 }
