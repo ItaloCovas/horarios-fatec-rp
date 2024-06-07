@@ -10,7 +10,7 @@ interface SignInDialogProps {
 }
 
 export function SignInDialog({ open, closeDialog }: SignInDialogProps) {
-  const { register, errors, reset } = useSignInDialog();
+  const { register, errors, reset, handleSubmit } = useSignInDialog();
 
   return (
     <Dialog.Root
@@ -54,6 +54,7 @@ export function SignInDialog({ open, closeDialog }: SignInDialogProps) {
             <button
               type="submit"
               className="bg-red-primary text-white w-full py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
+              onClick={handleSubmit}
             >
               ENTRAR
             </button>

@@ -28,13 +28,13 @@ export function Header() {
 
         <ul className="gap-x-6 hidden md:flex items-center">
           <a
-            className="p-2 cursor-pointer hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out"
+            className="p-2 cursor-pointer hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out focus-visible:outline-none"
             href="#about"
           >
             Por que usar?
           </a>
           <a
-            className="p-2 cursor-pointer hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out"
+            className="p-2 cursor-pointer hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out focus-visible:outline-none"
             href="https://github.com/ItaloCovas/horarios-fatec-rp"
             target="_blank"
           >
@@ -43,7 +43,7 @@ export function Header() {
           <li>
             <button
               onClick={openDialog}
-              className="text-red-primary py-2 px-4 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary"
+              className="text-red-primary py-2 px-4 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary focus-visible:outline-none"
             >
               ENTRAR
             </button>

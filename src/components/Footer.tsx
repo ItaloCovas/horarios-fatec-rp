@@ -9,7 +9,7 @@ export function Footer() {
 
         <ul className="flex gap-2 flex-col md:flex-row items-center text-center">
           <a
-            className="p-2 cursor-pointer  hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out"
+            className="p-2 cursor-pointer  hover:bg-gray-200 rounded-xl transition-all duration-150 ease-in-out focus-visible:outline-none"
             href="http://www.fatecrp.edu.br/"
             target="_blank"
           >

@@ -1,5 +1,6 @@
 'use client';
 
+import { useDialog } from '../context/DialogContext/useDialog';
 import { cn } from '../utils/cn';
 
 interface MenuProps {
@@ -9,6 +10,7 @@ interface MenuProps {
 
 export function Sidebar({ isOpen, onClose }: MenuProps) {
   const menuClass = isOpen ? 'translate-x-0' : 'translate-x-full';
+  const { openDialog } = useDialog();
 
   return (
     <div
@@ -39,7 +41,13 @@ export function Sidebar({ isOpen, onClose }: MenuProps) {
               Contribuir
             </a>
             <li>
-              <button className="text-red-primary py-2 px-4 pl-2 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary">
+              <button
+                className="text-red-primary py-2 px-4 pl-2 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary"
+                onClick={() => {
+                  onClose();
+                  openDialog();
+                }}
+              >
                 ENTRAR
               </button>
             </li>

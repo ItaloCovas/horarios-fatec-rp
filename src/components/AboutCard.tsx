@@ -16,7 +16,7 @@ export function AboutCard({ description, icon, title }: AboutCardProps) {
   };
 
   return (
-    <div className="flex items-center mt-14 rounded-full max-w-[400px] shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+    <div className="flex items-center mt-14 rounded-full max-w-[400px] shadow-xl">
       <div className="flex flex-col gap-y-5 items-center justify-center bg-white px-6 py-14">
         <div className="w-[80px] h-[80px] rounded-full bg-[#F3F0EA] flex items-center justify-center">
           {icons[icon]}

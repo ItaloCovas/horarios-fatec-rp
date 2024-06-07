@@ -1,16 +1,7 @@
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { MainContentWrapper } from './components/MainContentWrapper';
-import { DialogProvider } from './context/DialogContext/DialogContext';
+import { Router } from './routes/router';
 
 function App() {
-  return (
-    <DialogProvider>
-      <Header />
-      <MainContentWrapper />
-      <Footer />
-    </DialogProvider>
-  );
+  return <Router />;
 }
 
 export default App;
