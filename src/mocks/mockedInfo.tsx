@@ -14,8 +14,8 @@ export const mockedInfo = {
       },
       {
         horario: '19:50 - 20:40',
-        materia: 'INGLÊS II',
-        professor: 'MICHELLE',
+        materia: 'ADM GERAL',
+        professor: 'CARLOS E',
         imagem:
           'https://www.researchgate.net/publication/313665306/figure/fig1/AS:461406861565952@1487019376144/typical-floor-plan-of-typical-governmental-primary-school-and-selected-reference-case.png',
         localizacao: 'S20(1º Andar)',

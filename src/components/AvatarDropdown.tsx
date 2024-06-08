@@ -1,8 +1,11 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { UserIcon } from './icons/UserIcon';
 import { LogoutIcon } from './icons/LogoutIcon';
+import { useNavigate } from 'react-router-dom';
 
 export function AvatarDropdown() {
+  const navigate = useNavigate();
+
   return (
     <DropdownMenu.Root modal={false}>
       <DropdownMenu.Trigger asChild>
@@ -32,7 +35,13 @@ export function AvatarDropdown() {
           <DropdownMenu.Separator className="h-[1px] bg-mauve11 m-[5px] md:hidden" />
 
           <DropdownMenu.Label className="flex justify-end p-2 md:hidden">
-            <LogoutIcon className="cursor-pointer" />
+            <LogoutIcon
+              className="cursor-pointer"
+              onClick={() => {
+                // TODO: lógica de Logout
+                navigate('/', { replace: true });
+              }}
+            />
           </DropdownMenu.Label>
           <DropdownMenu.Arrow className="fill-white" />
         </DropdownMenu.Content>

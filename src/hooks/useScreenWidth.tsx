@@ -7,8 +7,7 @@ export function useScreenWidth() {
     const handleResize = () => setWidth(window.innerWidth);
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Call it once to set the initial value
-
+    handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 

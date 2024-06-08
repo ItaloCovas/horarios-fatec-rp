@@ -11,6 +11,10 @@ import {
 } from 'react-icons/fa';
 import { cn } from '../utils/cn';
 
+interface TableProps {
+  openDialog(): void;
+}
+
 type RowData = {
   horario: string;
   materia: string;
@@ -19,7 +23,7 @@ type RowData = {
   localizacao: string;
 };
 
-export function Table() {
+export function Table({ openDialog }: TableProps) {
   const screenWidth = useScreenWidth();
   const isMobile = screenWidth < 700;
   const data = useMemo(() => mockedInfo.dias.segunda, []);
@@ -37,7 +41,7 @@ export function Table() {
           ),
         accessor: 'horario',
         Cell: ({ value }) => (
-          <div className="text-[13px] md:text-base">{value}</div>
+          <div className="text-[13px] md:text-base font-semibold">{value}</div>
         ),
       },
       {
@@ -51,7 +55,7 @@ export function Table() {
           ),
         accessor: 'materia',
         Cell: ({ value }) => (
-          <div className="text-[13px] md:text-base">{value}</div>
+          <div className="text-[13px] md:text-base font-semibold">{value}</div>
         ),
       },
       {
@@ -65,7 +69,9 @@ export function Table() {
           ),
         accessor: 'professor',
         Cell: ({ value }) => (
-          <div className="text-[13px] md:text-base">{value}</div>
+          <div className="text-[13px] md:text-base font-semibold text-center">
+            {value}
+          </div>
         ),
       },
       {
@@ -78,16 +84,14 @@ export function Table() {
             'Localização'
           ),
         accessor: 'localizacao',
-        Cell: () =>
-          isMobile ? (
-            <div className="cursor-pointer flex items-center justify-center">
-              <FaMapMarkedAlt className="w-[20px] h-[20px]" />
-            </div>
-          ) : (
-            <div className="bg-red-primary p-[3px] cursor-pointer rounded-md text-white w-full text-[13px] md:text-base">
-              Localização
-            </div>
-          ),
+        Cell: () => (
+          <div
+            className="cursor-pointer flex items-center justify-center"
+            onClick={openDialog}
+          >
+            <FaMapMarkedAlt className="w-[20px] h-[20px]" />
+          </div>
+        ),
       },
     ],
     [isMobile],
@@ -114,11 +118,12 @@ export function Table() {
                 <th
                   {...column.getHeaderProps()}
                   className={cn(
-                    'px-6 w-fit py-3 text-center text-md font-bold text-white uppercase tracking-wider',
+                    'px-6 py-3 text-center text-md font-bold text-white uppercase tracking-wider border-r border-red-900',
                     index === 0 ? 'rounded-tl-lg' : '',
                     index === headerGroup.headers.length - 1
-                      ? 'rounded-tr-lg'
+                      ? 'rounded-tr-lg border-none'
                       : '',
+                    column.id === 'localizacao' ? 'w-[100px]' : '',
                   )}
                 >
                   <div
@@ -146,10 +151,12 @@ export function Table() {
                 {row.cells.map((cell, index) => (
                   <td
                     {...cell.getCellProps()}
-                    className={`px-2 md:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 ${
+                    className={`px-2 md:px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r border-gray-300 ${
                       index === 0 ? 'rounded-bl-lg' : ''
                     } ${
-                      index === row.cells.length - 1 ? 'rounded-br-lg' : ''
+                      index === row.cells.length - 1
+                        ? 'rounded-br-lg w-[100px] border-none'
+                        : ''
                     } `}
                   >
                     <div
