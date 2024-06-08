@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useTable, Column } from 'react-table';
-import { mockedInfo } from '../mocks/mockedInfo';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import {
   FaMapMarkerAlt,
@@ -12,7 +11,10 @@ import {
 import { cn } from '../utils/cn';
 
 interface TableProps {
-  openDialog(): void;
+  openDialog: () => void;
+  data: RowData[];
+  setLocationTitle: React.Dispatch<React.SetStateAction<string>>;
+  setImageURL: React.Dispatch<React.SetStateAction<string>>;
 }
 
 type RowData = {
@@ -23,10 +25,15 @@ type RowData = {
   localizacao: string;
 };
 
-export function Table({ openDialog }: TableProps) {
+export function Table({
+  openDialog,
+  data,
+  setLocationTitle,
+  setImageURL,
+}: TableProps) {
   const screenWidth = useScreenWidth();
-  const isMobile = screenWidth < 700;
-  const data = useMemo(() => mockedInfo.dias.segunda, []);
+  const isMobile = useMemo(() => screenWidth < 700, [screenWidth]);
+  const isBreakingHour = useMemo(() => screenWidth < 452, [screenWidth]);
 
   const columns: Column<RowData>[] = useMemo(
     () => [
@@ -84,17 +91,24 @@ export function Table({ openDialog }: TableProps) {
             'Localização'
           ),
         accessor: 'localizacao',
-        Cell: () => (
-          <div
-            className="cursor-pointer flex items-center justify-center"
-            onClick={openDialog}
-          >
-            <FaMapMarkedAlt className="w-[20px] h-[20px]" />
-          </div>
-        ),
+        Cell: ({ row }) => {
+          const { localizacao, imagem } = row.original;
+          return (
+            <div
+              className="cursor-pointer flex items-center justify-center"
+              onClick={() => {
+                setLocationTitle(localizacao);
+                setImageURL(imagem);
+                openDialog();
+              }}
+            >
+              <FaMapMarkedAlt className="w-[20px] h-[20px]" />
+            </div>
+          );
+        },
       },
     ],
-    [isMobile],
+    [isMobile, openDialog, setLocationTitle, setImageURL],
   );
 
   const tableInstance = useTable({ columns, data });
@@ -148,26 +162,36 @@ export function Table({ openDialog }: TableProps) {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map((cell, index) => (
-                  <td
-                    {...cell.getCellProps()}
-                    className={`px-2 md:px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r border-gray-300 ${
-                      index === 0 ? 'rounded-bl-lg' : ''
-                    } ${
-                      index === row.cells.length - 1
-                        ? 'rounded-br-lg w-[100px] border-none'
-                        : ''
-                    } `}
-                  >
-                    <div
-                      className={`${index === 0 ? 'rounded-bl-lg' : ''} ${
-                        index === row.cells.length - 1 ? 'rounded-br-lg' : ''
+                {row.cells.map((cell, index) => {
+                  return (
+                    <td
+                      {...cell.getCellProps()}
+                      className={`px-2 md:px-2 py-4  text-sm font-medium text-gray-900 border-r border-gray-300 ${
+                        index === 0 ? 'rounded-bl-lg' : ''
+                      } ${
+                        index === row.cells.length - 1
+                          ? 'rounded-br-lg w-[100px] border-none'
+                          : ''
                       }`}
                     >
-                      {cell.render('Cell')}
-                    </div>
-                  </td>
-                ))}
+                      <div
+                        className={`${index === 0 ? 'rounded-bl-lg' : ''} ${
+                          index === row.cells.length - 1 ? 'rounded-br-lg' : ''
+                        } ${
+                          cell.column.id === 'materia' && cell.value.length > 11
+                            ? ''
+                            : ''
+                        } ${
+                          cell.column.id === 'horario' && isBreakingHour
+                            ? ''
+                            : ''
+                        }`}
+                      >
+                        {cell.render('Cell')}
+                      </div>
+                    </td>
+                  );
+                })}
               </tr>
             );
           })}

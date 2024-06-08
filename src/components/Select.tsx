@@ -37,7 +37,7 @@ export function Select({
   }
 
   return (
-    <div className="max-w-[400px] w-full mt-4 mb-8">
+    <div className="max-w-[400px] w-full mt-4 mb-8 px-4 md:px-0">
       <div className="relative">
         <label
           className={cn(
