@@ -13,10 +13,10 @@ export function AdminSignIn() {
         </div>
         <form className="flex flex-col gap-y-4 pb-0">
           <Input
-            error={errors.user?.message}
-            placeholder="Usuário"
+            error={errors.email?.message}
+            placeholder="Email"
             type="text"
-            {...register('user')}
+            {...register('email')}
           />
 
           <Input

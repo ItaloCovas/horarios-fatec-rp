@@ -1,7 +1,14 @@
-import { Router } from './routes/router';
+import { AuthProvider } from './context/AuthContext/AuthContext';
+import { Router } from './router/router';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
-  return <Router />;
+  return (
+    <AuthProvider>
+      <Router />
+      <Toaster />
+    </AuthProvider>
+  );
 }
 
 export default App;

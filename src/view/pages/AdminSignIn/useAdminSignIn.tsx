@@ -1,15 +1,21 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { authService } from '../../../services/authService';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext/useAuth';
 
 const schema = z.object({
-  user: z.string().min(1, 'Usuário é obrigatório.'),
+  email: z.string().min(1, 'Email é obrigatório.'),
   password: z.string().min(8, 'Senha é obrigatória.'),
 });
 
 type FormData = z.infer<typeof schema>;
 
 export function useAdminSignIn() {
+  const navigate = useNavigate();
+  const { signIn } = useAuth();
   const {
     register,
     handleSubmit: hookFormSubmit,
@@ -20,18 +26,19 @@ export function useAdminSignIn() {
     mode: 'all',
     criteriaMode: 'all',
     defaultValues: {
-      user: '',
+      email: '',
       password: '',
     },
   });
 
-  const handleSubmit = hookFormSubmit((data: FormData) => {
+  const handleSubmit = hookFormSubmit(async (data: FormData) => {
     try {
-      console.log(data, 'formData');
-      //   onClose();
-      // reset();
+      const authData = await authService.signInAdmin(data);
+      signIn(authData!.token);
+      reset();
+      navigate('/admin/classes', { replace: true });
     } catch {
-      //   toast.error(t('toastMessages.categories.editCategoryError'));
+      toast.error('Credenciais inválidas, tente novamente.');
     }
   });
 
