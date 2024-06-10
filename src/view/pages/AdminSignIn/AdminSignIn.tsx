@@ -6,7 +6,7 @@ export function AdminSignIn() {
   const { errors, register, handleSubmit } = useAdminSignIn();
 
   return (
-    <div className="bg-[#F9F9F9] h-screen w-screen flex justify-center items-center">
+    <main className="bg-[#F9F9F9] h-screen w-screen flex justify-center items-center">
       <div className="bg-white w-[90vw] md:w-[50vw] h-[350px] max-w-[450px] rounded-[6px] p-[25px] flex flex-col justify-between shadow-2xl">
         <div className="flex justify-center">
           <Logo loginText=" - ADMIN" />
@@ -37,6 +37,6 @@ export function AdminSignIn() {
           </button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

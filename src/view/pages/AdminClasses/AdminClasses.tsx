@@ -1,3 +1,9 @@
+import { AdminHeader } from '../../components/AdminHeader/AdminHeader';
+
 export function AdminClasses() {
-  return <div>Admin DASH</div>;
+  return (
+    <main>
+      <AdminHeader />
+    </main>
+  );
 }

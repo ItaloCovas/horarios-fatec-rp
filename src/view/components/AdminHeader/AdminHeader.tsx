@@ -1,9 +1,8 @@
+import { useAuth } from '../../../context/AuthContext/useAuth';
 import { Logo } from '../Logo';
 import { LogoutIcon } from '../icons/LogoutIcon';
-import { AvatarDropdown } from '../AvatarDropdown';
-import { useAuth } from '../../../context/AuthContext/useAuth';
 
-export function ClassesHeader() {
+export function AdminHeader() {
   const { signOut } = useAuth();
 
   return (
@@ -11,11 +10,7 @@ export function ClassesHeader() {
       <Logo />
       <nav className="flex items-center">
         <ul className="gap-x-6 flex items-center">
-          <AvatarDropdown />
-          <LogoutIcon
-            className="hidden md:block cursor-pointer"
-            onClick={signOut}
-          />
+          <LogoutIcon className="cursor-pointer" onClick={signOut} />
         </ul>
       </nav>
     </header>
