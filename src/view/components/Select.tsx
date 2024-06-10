@@ -5,7 +5,7 @@ import {
   CrossCircledIcon,
 } from '@radix-ui/react-icons';
 import { useState } from 'react';
-import { cn } from '../utils/cn';
+import { cn } from '../../utils/cn';
 
 interface SelectProps {
   className?: string;

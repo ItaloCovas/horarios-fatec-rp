@@ -1,5 +1,5 @@
-import { Input } from '../Input';
-import { Logo } from '../Logo';
+import { Input } from '../../components/Input';
+import { Logo } from '../../components/Logo';
 import { useAdminSignIn } from './useAdminSignIn';
 
 export function AdminSignIn() {

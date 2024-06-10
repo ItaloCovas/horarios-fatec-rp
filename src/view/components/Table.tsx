@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTable, Column } from 'react-table';
-import { useScreenWidth } from '../hooks/useScreenWidth';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
 import {
   FaMapMarkerAlt,
   FaMapMarkedAlt,
@@ -8,7 +8,7 @@ import {
   FaRegClock,
   FaChalkboardTeacher,
 } from 'react-icons/fa';
-import { cn } from '../utils/cn';
+import { cn } from '../../utils/cn';
 
 interface TableProps {
   openDialog: () => void;

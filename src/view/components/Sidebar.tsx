@@ -1,7 +1,7 @@
 'use client';
 
-import { useDialog } from '../context/DialogContext/useDialog';
-import { cn } from '../utils/cn';
+import { useDialog } from '../../context/DialogContext/useDialog';
+import { cn } from '../../utils/cn';
 
 interface MenuProps {
   isOpen: boolean;

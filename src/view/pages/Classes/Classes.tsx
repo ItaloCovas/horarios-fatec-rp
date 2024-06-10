@@ -1,11 +1,12 @@
 import { Controller } from 'react-hook-form';
-import { useDialog } from '../../context/DialogContext/useDialog';
-import { mockedInfo } from '../../mocks/mockedInfo';
-import { ClassesHeader } from '../ClassesHeader/ClassesHeader';
-import { LocationDialog } from '../LocationDialog/LocationDialog';
-import { Select } from '../Select';
-import { Table } from '../Table';
+import { useDialog } from '../../../context/DialogContext/useDialog';
+import { mockedInfo } from '../../../mocks/mockedInfo';
+
 import { useClasses } from './useClasses';
+import { ClassesHeader } from '../../components/ClassesHeader/ClassesHeader';
+import { Select } from '../../components/Select';
+import { Table } from '../../components/Table';
+import { LocationDialog } from '../../components/LocationDialog/LocationDialog';
 
 export function Classes() {
   const { closeDialog, open, openDialog } = useDialog();

@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMemo, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { mockedInfo } from '../../mocks/mockedInfo';
+import { mockedInfo } from '../../../mocks/mockedInfo';
 
 const schema = z.object({
   type: z.enum([

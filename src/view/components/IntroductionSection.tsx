@@ -1,4 +1,4 @@
-import { useDialog } from '../context/DialogContext/useDialog';
+import { useDialog } from '../../context/DialogContext/useDialog';
 import { ClockIcon } from './icons/ClockIcon';
 
 export function IntroductionSection() {

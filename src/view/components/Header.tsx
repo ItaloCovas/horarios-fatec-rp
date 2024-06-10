@@ -3,7 +3,7 @@ import { Logo } from './Logo';
 import { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { SignInDialog } from './SignInDialog/SignInDialog';
-import { useDialog } from '../context/DialogContext/useDialog';
+import { useDialog } from '../../context/DialogContext/useDialog';
 
 export function Header() {
   const { closeDialog, open, openDialog } = useDialog();
