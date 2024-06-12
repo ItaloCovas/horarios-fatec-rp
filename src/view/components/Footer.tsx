@@ -16,9 +16,13 @@ export function Footer() {
             FATEC
           </a>
           <li>
-            <button className="text-red-primary py-2 px-4 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary">
+            <a
+              href="https://github.com/ItaloCovas/horarios-fatec-rp"
+              target="_blank"
+              className="text-red-primary py-2 px-4 rounded-xl tracking-wider text-xl font-bold hover:text-red-secondary"
+            >
               Contate-nos
-            </button>
+            </a>
           </li>
         </ul>
       </nav>

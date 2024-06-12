@@ -16,7 +16,7 @@ export function Router() {
           <Route path="/admin" element={<AdminSignIn />} />
         </Route>
 
-        <Route element={<PrivateRoute isPrivate={false} />}>
+        <Route element={<PrivateRoute isPrivate />}>
           <Route path="/admin/classes" element={<AdminClasses />} />
         </Route>
         <Route

@@ -36,6 +36,7 @@ export function useAdminSignIn() {
       const authData = await authService.signInAdmin(data);
       signIn(authData!.token);
       reset();
+      toast.success('Login efetuado com sucesso.');
       navigate('/admin/classes', { replace: true });
     } catch {
       toast.error('Credenciais inválidas, tente novamente.');
