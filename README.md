@@ -1,7 +1,7 @@
 # Repositório oficial Horários FATEC RP
 
-Este é o repositório oficial do TCC Horários FATEC RP.
-Desenvolvido por Arthur Galanti e Ítalo Covas.
+Este é o repositório oficial do TCC Horários FATEC RP.<br />
+Desenvolvido por Arthur Galanti e Ítalo Covas.<br />
 Link de produção: https://horarios-fatec-rp.vercel.app/
 
 ## Diagrama de caso de uso
