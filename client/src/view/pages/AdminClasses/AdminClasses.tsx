@@ -4,9 +4,9 @@ export function AdminClasses() {
   return (
     <main>
       <AdminHeader />
-      <div className="h-screen font-sans text-gray-900 bg-gray-300 border-box">
-        <div className="flex justify-center w-[80vw] mx-auto sm:max-w-lg rounded-full">
-          <div className="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 rounded-lg sm:shadow-xl">
+      <div className="h-screen font-sans text-gray-900 bg-gray-300 border-box flex flex-col items-center">
+        <div className="flex justify-center w-[80vw] sm:max-w-lg rounded-full">
+          <div className="flex flex-col items-center justify-center w-full h-auto my-20 mb-8 bg-white pb-8 sm:w-3/4 rounded-lg sm:shadow-xl">
             <div className="mt-10 mb-10 text-center">
               <h2 className="text-2xl font-semibold mb-2">
                 Carregue a planilha
@@ -41,8 +41,16 @@ export function AdminClasses() {
                 </svg>
               </label>
             </form>
+            <button
+              type="submit"
+              className="bg-red-primary text-white w-4/5 py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
+              onClick={() => {}}
+            >
+              CARREGAR
+            </button>
           </div>
         </div>
+        <div className="flex justify-center items-center"></div>
       </div>
     </main>
   );
