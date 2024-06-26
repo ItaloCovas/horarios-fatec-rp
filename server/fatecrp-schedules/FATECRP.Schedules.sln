@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FATECRP.Schedules.Domain", "src\FATECRP.Schedules.Domain\FATECRP.Schedules.Domain.csproj", "{D05D1F54-4CA6-453B-B3B2-F10871991401}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FATECRP.Schedules.Infra.Data", "src\FATECRP.Schedules.Infra.Data\FATECRP.Schedules.Infra.Data.csproj", "{CF0FD4EC-A788-4553-B621-195CAB5FD71F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FATECRP.Schedules.Services.Api", "src\FATECRP.Schedules.Services.Api\FATECRP.Schedules.Services.Api.csproj", "{E94D03CF-38BE-4CF6-A37B-6D2094D9C3FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Services", "01-Services", "{96A8C687-B54E-491B-9A60-CA5B382A21F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Domain", "02-Domain", "{A43EDF44-24C9-43F4-A56B-EB7CE78891AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Infra", "03-Infra", "{94463259-B81C-4C58-85B8-929D846A5784}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.01-Data", "03.01-Data", "{38AD83DB-94CA-431A-9813-A83F99816F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D05D1F54-4CA6-453B-B3B2-F10871991401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D05D1F54-4CA6-453B-B3B2-F10871991401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D05D1F54-4CA6-453B-B3B2-F10871991401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D05D1F54-4CA6-453B-B3B2-F10871991401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0FD4EC-A788-4553-B621-195CAB5FD71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0FD4EC-A788-4553-B621-195CAB5FD71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0FD4EC-A788-4553-B621-195CAB5FD71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0FD4EC-A788-4553-B621-195CAB5FD71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E94D03CF-38BE-4CF6-A37B-6D2094D9C3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94D03CF-38BE-4CF6-A37B-6D2094D9C3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E94D03CF-38BE-4CF6-A37B-6D2094D9C3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E94D03CF-38BE-4CF6-A37B-6D2094D9C3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D05D1F54-4CA6-453B-B3B2-F10871991401} = {A43EDF44-24C9-43F4-A56B-EB7CE78891AE}
+		{CF0FD4EC-A788-4553-B621-195CAB5FD71F} = {38AD83DB-94CA-431A-9813-A83F99816F7D}
+		{E94D03CF-38BE-4CF6-A37B-6D2094D9C3FB} = {96A8C687-B54E-491B-9A60-CA5B382A21F3}
+		{38AD83DB-94CA-431A-9813-A83F99816F7D} = {94463259-B81C-4C58-85B8-929D846A5784}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {568493B7-A554-4078-94DC-746FD5A48CD6}
+	EndGlobalSection
+EndGlobal

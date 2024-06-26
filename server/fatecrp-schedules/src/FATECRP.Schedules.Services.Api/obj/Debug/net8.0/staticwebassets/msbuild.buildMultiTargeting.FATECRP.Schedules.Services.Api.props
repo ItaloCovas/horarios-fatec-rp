@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FATECRP.Schedules.Services.Api.props" />
+</Project>
