@@ -4,7 +4,8 @@ import { useAdminClasses } from './useAdminClasses';
 import { Input } from '../../components/Input';
 
 export function AdminClasses() {
-  const { control, errors, handleSubmit } = useAdminClasses();
+  const { control, errors, handleSubmit, filename, setFilename } =
+    useAdminClasses();
 
   return (
     <main>
@@ -34,12 +35,13 @@ export function AdminClasses() {
                     className="hidden"
                     error={errors.file?.message as string}
                     onChange={(event) => {
+                      console.log(event, 'evnt');
                       if (
                         event.target &&
                         event.target.files &&
                         event.target.files.length > 0
                       ) {
-                        console.log('easyy');
+                        setFilename(event.target.files[0].name);
                         field.onChange(event.target.files[0]);
                       }
                     }}
@@ -51,10 +53,10 @@ export function AdminClasses() {
                 className="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
               >
                 <p className="z-10 text-sm font-semibold text-center text-gray-500">
-                  Se preferir, clique
+                  {filename ? '' : 'Se preferir, clique'}
                 </p>
                 <p className="z-10 text-sm font-semibold text-center text-gray-500">
-                  Arraste e solte seus arquivos aqui
+                  {filename ? filename : 'Arraste e solte seus arquivos aqui'}
                 </p>
 
                 <svg
