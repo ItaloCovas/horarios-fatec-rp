@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FATECRP.Schedules.Infra.Data
-build_property.ProjectDir = C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\
+build_property.ProjectDir = C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -11,3 +11,16 @@ C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.S
 C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\refint\FATECRP.Schedules.Domain.dll
 C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.pdb
 C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\ref\FATECRP.Schedules.Domain.dll
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\bin\Debug\net8.0\FATECRP.Schedules.Domain.deps.json
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\bin\Debug\net8.0\FATECRP.Schedules.Domain.dll
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\bin\Debug\net8.0\FATECRP.Schedules.Domain.pdb
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.csproj.AssemblyReference.cache
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.AssemblyInfoInputs.cache
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.AssemblyInfo.cs
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.csproj.CoreCompileInputs.cache
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.sourcelink.json
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.dll
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\refint\FATECRP.Schedules.Domain.dll
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\FATECRP.Schedules.Domain.pdb
+C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Domain\obj\Debug\net8.0\ref\FATECRP.Schedules.Domain.dll

@@ -37,14 +37,17 @@ export function useClasses() {
     [currentDayIndex, daysOfWeek],
   );
 
-  const dayMapping: { [key: string]: keyof typeof mockedInfo.dias } = {
-    'Segunda-feira': 'segunda',
-    'Terça-feira': 'terça',
-    'Quarta-feira': 'quarta',
-    'Quinta-feira': 'quinta',
-    'Sexta-feira': 'sexta',
-    Sábado: 'sabado',
-  };
+  const dayMapping: { [key: string]: keyof typeof mockedInfo.dias } =
+    useMemo(() => {
+      return {
+        'Segunda-feira': 'segunda',
+        'Terça-feira': 'terça',
+        'Quarta-feira': 'quarta',
+        'Quinta-feira': 'quinta',
+        'Sexta-feira': 'sexta',
+        Sábado: 'sabado',
+      };
+    }, []);
 
   const months: string[] = useMemo(
     () => [
@@ -85,7 +88,7 @@ export function useClasses() {
     if (selectedDay) {
       setData(mockedInfo.dias[dayMapping[selectedDay]]);
     }
-  }, [selectedDay]);
+  }, [selectedDay, dayMapping]);
 
   function currentDate() {
     const date = new Date();

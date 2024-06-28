@@ -1,6 +1,11 @@
+import { Controller } from 'react-hook-form';
 import { AdminHeader } from '../../components/AdminHeader/AdminHeader';
+import { useAdminClasses } from './useAdminClasses';
+import { Input } from '../../components/Input';
 
 export function AdminClasses() {
+  const { control, errors, handleSubmit } = useAdminClasses();
+
   return (
     <main>
       <AdminHeader />
@@ -16,10 +21,31 @@ export function AdminClasses() {
               </p>
             </div>
             <form
-              action="#"
-              className="relative w-4/5 h-32 max-w-xs mb-10  bg-gray-100 rounded-lg shadow-inner"
+              onSubmit={handleSubmit}
+              className="relative w-4/5 h-32 max-w-xs mb-14  bg-gray-100 rounded-lg shadow-inner"
             >
-              <input type="file" id="file-upload" className="hidden" />
+              <Controller
+                name="file"
+                control={control}
+                render={({ field }) => (
+                  <Input
+                    type="file"
+                    id="file-upload"
+                    className="hidden"
+                    error={errors.file?.message as string}
+                    onChange={(event) => {
+                      if (
+                        event.target &&
+                        event.target.files &&
+                        event.target.files.length > 0
+                      ) {
+                        console.log('easyy');
+                        field.onChange(event.target.files[0]);
+                      }
+                    }}
+                  />
+                )}
+              />
               <label
                 htmlFor="file-upload"
                 className="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
@@ -40,14 +66,16 @@ export function AdminClasses() {
                   <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
                 </svg>
               </label>
+              <div className="flex justify-center items-center">
+                <button
+                  type="submit"
+                  className="bg-red-primary text-white w-4/5 py-2 mt-3 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
+                  onClick={() => {}}
+                >
+                  CARREGAR
+                </button>
+              </div>
             </form>
-            <button
-              type="submit"
-              className="bg-red-primary text-white w-4/5 py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
-              onClick={() => {}}
-            >
-              CARREGAR
-            </button>
           </div>
         </div>
         <div className="flex justify-center items-center"></div>

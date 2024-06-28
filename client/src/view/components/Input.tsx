@@ -4,7 +4,6 @@ import { cn } from '../../utils/cn';
 
 interface InputProps extends ComponentProps<'input'> {
   name?: string;
-
   error?: string;
 }
 
@@ -36,9 +35,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {placeholder}
         </label>
         {error && (
-          <div className="flex gap-2 items-center mt-2 text-red-900">
+          <div
+            className={cn(
+              'flex gap-2 items-center mt-2 text-red-900',
+              type === 'file' && 'justify-center',
+            )}
+          >
             <CrossCircledIcon />
-            <span className="text-xs">{error}</span>{' '}
+            <span className="text-xs">{error}</span>
           </div>
         )}
       </div>

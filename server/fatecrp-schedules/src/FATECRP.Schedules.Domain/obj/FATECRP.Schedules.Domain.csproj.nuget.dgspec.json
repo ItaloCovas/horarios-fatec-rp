@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj": {}
+    "C:\\Users\\italo\\OneDrive\\Área de Trabalho\\horarios-fatec-rp\\server\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj": {}
   },
   "projects": {
-    "C:\\dev\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj": {
+    "C:\\Users\\italo\\OneDrive\\Área de Trabalho\\horarios-fatec-rp\\server\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\italo\\OneDrive\\Área de Trabalho\\horarios-fatec-rp\\server\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj",
         "projectName": "FATECRP.Schedules.Domain",
-        "projectPath": "C:\\dev\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj",
-        "packagesPath": "C:\\Users\\ArthurGalanti_ASROCK\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\obj\\",
+        "projectPath": "C:\\Users\\italo\\OneDrive\\Área de Trabalho\\horarios-fatec-rp\\server\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\FATECRP.Schedules.Domain.csproj",
+        "packagesPath": "C:\\Users\\italo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\italo\\OneDrive\\Área de Trabalho\\horarios-fatec-rp\\server\\fatecrp-schedules\\src\\FATECRP.Schedules.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArthurGalanti_ASROCK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\italo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -85,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
