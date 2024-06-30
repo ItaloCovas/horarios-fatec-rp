@@ -1,5 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
 
 const schema = z.object({
@@ -10,6 +12,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export function useSignInDialog() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit: hookFormSubmit,
@@ -29,9 +33,11 @@ export function useSignInDialog() {
     try {
       console.log(data, 'formData');
       //   onClose();
-      // reset();
+      reset();
+      toast.success('Login efetuado com sucesso.');
+      navigate('/classes', { replace: true });
     } catch {
-      //   toast.error(t('toastMessages.categories.editCategoryError'));
+      toast.error('Credenciais inválidas, tente novamente.');
     }
   });
 

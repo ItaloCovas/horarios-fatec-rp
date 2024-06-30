@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { authService } from '../../../services/authService';
+import { usersService } from '../../../services/usersService';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext/useAuth';
@@ -33,8 +33,8 @@ export function useAdminSignIn() {
 
   const handleSubmit = hookFormSubmit(async (data: FormData) => {
     try {
-      const authData = await authService.signInAdmin(data);
-      signIn(authData!.token);
+      const authData = await usersService.signInAdmin(data);
+      signIn(authData!);
       reset();
       toast.success('Login efetuado com sucesso.');
       navigate('/admin/classes', { replace: true });

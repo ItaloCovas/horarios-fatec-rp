@@ -11,14 +11,15 @@ export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<PrivateRoute isPrivate={false} />}>
+        <Route element={<PrivateRoute isPrivate={false} isAdmin={false} />}>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<AdminSignIn />} />
         </Route>
 
-        <Route element={<PrivateRoute isPrivate />}>
+        <Route element={<PrivateRoute isPrivate isAdmin />}>
           <Route path="/admin/classes" element={<AdminClasses />} />
         </Route>
+
         <Route
           path="/classes"
           element={

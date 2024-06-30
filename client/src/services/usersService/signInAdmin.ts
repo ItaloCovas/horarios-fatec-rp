@@ -5,7 +5,7 @@ export interface SignInAdminParams {
   password: string;
 }
 
-interface SignInAdminData {
+export interface SignInAdminData {
   email: string;
   token: string;
   refreshToken: string;

@@ -2,6 +2,7 @@ import { Controller } from 'react-hook-form';
 import { AdminHeader } from '../../components/AdminHeader/AdminHeader';
 import { useAdminClasses } from './useAdminClasses';
 import { Input } from '../../components/Input';
+import { SpreadsheetButton } from '../../components/SpreadsheetButton/SpreadsheetButton';
 
 export function AdminClasses() {
   const { control, errors, handleSubmit, filename, setFilename } =
@@ -10,7 +11,8 @@ export function AdminClasses() {
   return (
     <main>
       <AdminHeader />
-      <div className="h-screen font-sans text-gray-900 bg-gray-300 border-box flex flex-col items-center">
+      <div className="h-[calc(100vh-105px)] font-sans text-gray-900 bg-gray-300 border-box flex flex-col items-center relative">
+        <SpreadsheetButton />
         <div className="flex justify-center w-[80vw] sm:max-w-lg rounded-full">
           <div className="flex flex-col items-center justify-center w-full h-auto my-20 mb-8 bg-white pb-8 sm:w-3/4 rounded-lg sm:shadow-xl">
             <div className="mt-10 mb-10 text-center">

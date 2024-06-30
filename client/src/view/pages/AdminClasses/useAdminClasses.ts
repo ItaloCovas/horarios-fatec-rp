@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import * as XLSX from 'xlsx';
-import { authService } from '../../../services/authService';
 import toast from 'react-hot-toast';
+import { schedulesService } from '../../../services/schedulesService';
 
 type ExcelRow = {
   Curso: string;
@@ -86,7 +86,7 @@ export function useAdminClasses() {
           classroomLink: item?.ClassroomLink || '',
         }));
 
-        await authService.updateSchedules({ schedules: transformedJson });
+        await schedulesService.updateSchedules({ schedules: transformedJson });
         reset();
         setFilename('');
         toast.success('Arquivo salvo com sucesso, cheque os novos horários.');
