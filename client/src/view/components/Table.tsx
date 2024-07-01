@@ -9,10 +9,11 @@ import {
   FaChalkboardTeacher,
 } from 'react-icons/fa';
 import { cn } from '../../utils/cn';
+import { Class } from '../../services/usersService/signInUser';
 
 interface TableProps {
   openDialog: () => void;
-  data: RowData[];
+  data: Class[];
   setLocationTitle: React.Dispatch<React.SetStateAction<string>>;
   setImageURL: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -21,8 +22,9 @@ type RowData = {
   horario: string;
   materia: string;
   professor: string;
-  imagem: string;
-  localizacao: string;
+  imagemUrl: string;
+  sala: string;
+  andar: string;
 };
 
 export function Table({
@@ -90,15 +92,15 @@ export function Table({
           ) : (
             'Localização'
           ),
-        accessor: 'localizacao',
+        accessor: 'andar',
         Cell: ({ row }) => {
-          const { localizacao, imagem } = row.original;
+          const { andar, imagemUrl, sala } = row.original;
           return (
             <div
               className="cursor-pointer flex items-center justify-center"
               onClick={() => {
-                setLocationTitle(localizacao);
-                setImageURL(imagem);
+                setLocationTitle(`${sala} - ${andar}`);
+                setImageURL(imagemUrl);
                 openDialog();
               }}
             >

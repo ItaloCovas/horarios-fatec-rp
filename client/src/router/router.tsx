@@ -20,14 +20,16 @@ export function Router() {
           <Route path="/admin/classes" element={<AdminClasses />} />
         </Route>
 
-        <Route
-          path="/classes"
-          element={
-            <DialogProvider>
-              <Classes />
-            </DialogProvider>
-          }
-        />
+        <Route element={<PrivateRoute isPrivate isAdmin={false} />}>
+          <Route
+            path="/classes"
+            element={
+              <DialogProvider>
+                <Classes />
+              </DialogProvider>
+            }
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

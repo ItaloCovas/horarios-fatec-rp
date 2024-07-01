@@ -2,6 +2,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { Logo } from '../Logo';
 import { Input } from '../Input';
 import { useSignInDialog } from './useSignInDialog';
+import { Spinner } from '../Spinner';
 
 interface SignInDialogProps {
   open: boolean;
@@ -10,7 +11,8 @@ interface SignInDialogProps {
 }
 
 export function SignInDialog({ open, closeDialog }: SignInDialogProps) {
-  const { register, errors, reset, handleSubmit } = useSignInDialog();
+  const { register, errors, reset, handleSubmit, isLoading } =
+    useSignInDialog();
 
   return (
     <Dialog.Root
@@ -53,10 +55,11 @@ export function SignInDialog({ open, closeDialog }: SignInDialogProps) {
           <div className="w-full">
             <button
               type="submit"
-              className="bg-red-primary text-white w-full py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
+              className="bg-red-primary flex items-center justify-center gap-x-2 text-white w-full py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
               onClick={handleSubmit}
             >
               ENTRAR
+              {isLoading && <Spinner className="w-6 h-6" />}
             </button>
           </div>
           <Dialog.Close asChild>

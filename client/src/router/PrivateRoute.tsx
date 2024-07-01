@@ -9,12 +9,12 @@ interface PrivateRouteProps {
 }
 
 export function PrivateRoute({ isPrivate, isAdmin }: PrivateRouteProps) {
-  const { signedIn, checkAndRefreshToken } = useAuth();
+  const { adminSignedIn, checkAndRefreshToken, userSignedIn } = useAuth();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const verifyToken = async () => {
-      if (signedIn && isAdmin) {
+      if (adminSignedIn && isAdmin) {
         setLoading(true);
         if (
           localStorage.getItem('hrftcrp:acct') &&
@@ -26,22 +26,27 @@ export function PrivateRoute({ isPrivate, isAdmin }: PrivateRouteProps) {
       }
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 1000);
     };
 
     verifyToken();
-  }, [signedIn, isAdmin, checkAndRefreshToken]);
+  }, [adminSignedIn, isAdmin, checkAndRefreshToken]);
 
   if (loading) {
     return <SplashScreen isLoading={loading} />;
   }
 
-  if (!signedIn && isPrivate) {
-    return <Navigate to="/admin" replace />;
-  }
-
-  if (signedIn && !isPrivate) {
-    return <Navigate to="/admin/classes" replace />;
+  if (isAdmin) {
+    if (!adminSignedIn) {
+      return <Navigate to="/admin" replace />;
+    }
+  } else {
+    if (isPrivate && !userSignedIn) {
+      return <Navigate to="/" replace />;
+    }
+    if (!isPrivate && userSignedIn) {
+      return <Navigate to="/classes" replace />;
+    }
   }
 
   return <Outlet />;

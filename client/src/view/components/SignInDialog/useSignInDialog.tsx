@@ -1,8 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
+import { usersService } from '../../../services/usersService';
+import { useAuth } from '../../../context/AuthContext/useAuth';
 
 const schema = z.object({
   ra: z.string().min(1, 'RA é obrigatório'),
@@ -12,7 +14,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export function useSignInDialog() {
-  const navigate = useNavigate();
+  const { signInUser } = useAuth();
 
   const {
     register,
@@ -29,14 +31,19 @@ export function useSignInDialog() {
     },
   });
 
-  const handleSubmit = hookFormSubmit((data: FormData) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const handleSubmit = hookFormSubmit(async (data: FormData) => {
     try {
       console.log(data, 'formData');
-      //   onClose();
+      setIsLoading(true);
+      const userData = await usersService.signInUser(data);
+      setIsLoading(false);
+      signInUser(userData!);
       reset();
       toast.success('Login efetuado com sucesso.');
-      navigate('/classes', { replace: true });
     } catch {
+      setIsLoading(false);
       toast.error('Credenciais inválidas, tente novamente.');
     }
   });
@@ -47,5 +54,6 @@ export function useSignInDialog() {
     errors,
     handleSubmit,
     reset,
+    isLoading,
   };
 }

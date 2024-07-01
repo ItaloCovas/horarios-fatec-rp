@@ -3,13 +3,18 @@ import { SignInAdminData } from '../../services/usersService/signInAdmin';
 import { usersService } from '../../services/usersService';
 import toast from 'react-hot-toast';
 import { Navigate } from 'react-router-dom';
+import { SignInUserData } from '../../services/usersService/signInUser';
 
 interface AuthContextProps {
-  signedIn: boolean;
+  adminSignedIn: boolean;
+
+  userSignedIn: boolean;
 
   signOut(): void;
 
-  signIn(authData: SignInAdminData): void;
+  signInAdmin(authData: SignInAdminData): void;
+
+  signInUser(authData: SignInUserData): void;
 
   checkAndRefreshToken(): Promise<JSX.Element | undefined>;
 }
@@ -21,22 +26,33 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextProps);
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [signedIn, setSignedIn] = useState<boolean>(() => {
+  const [adminSignedIn, setAdminSignedIn] = useState<boolean>(() => {
     const storedAccessToken = localStorage.getItem('hrftcrp:acct');
     return Boolean(storedAccessToken);
   });
 
-  const signIn = useCallback((authData: SignInAdminData) => {
+  const [userSignedIn, setUserSignedIn] = useState<boolean>(() => {
+    const storedUserData = localStorage.getItem('hrftcrp:udcls');
+    return Boolean(storedUserData);
+  });
+
+  const signInUser = useCallback((userData: SignInUserData) => {
+    localStorage.setItem('hrftcrp:udcls', JSON.stringify(userData));
+    setUserSignedIn(true);
+  }, []);
+
+  const signInAdmin = useCallback((authData: SignInAdminData) => {
     const expirationDate = new Date().getTime() + authData.expireIn * 1000;
     localStorage.setItem('hrftcrp:acct', authData.token);
     localStorage.setItem('hrftcrp:rft', authData.refreshToken);
     localStorage.setItem('hrftcrp:exp', expirationDate.toString());
-    setSignedIn(true);
+    setAdminSignedIn(true);
   }, []);
 
   const signOut = useCallback(() => {
     localStorage.clear();
-    setSignedIn(false);
+    setAdminSignedIn(false);
+    setUserSignedIn(false);
   }, []);
 
   const checkAndRefreshToken = async () => {
@@ -75,7 +91,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   return (
     <AuthContext.Provider
-      value={{ signedIn, signIn, signOut, checkAndRefreshToken }}
+      value={{
+        adminSignedIn,
+        userSignedIn,
+        signInAdmin,
+        signInUser,
+        signOut,
+        checkAndRefreshToken,
+      }}
     >
       {children}
     </AuthContext.Provider>

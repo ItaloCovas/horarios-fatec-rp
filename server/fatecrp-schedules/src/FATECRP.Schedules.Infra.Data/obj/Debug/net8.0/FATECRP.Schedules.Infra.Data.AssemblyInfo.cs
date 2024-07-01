@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FATECRP.Schedules.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+839145f577b973f20e4535c8ed8fe98d80644c4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4deeb932857b80e25cc597ba330e9fc079c5411")]
 [assembly: System.Reflection.AssemblyProductAttribute("FATECRP.Schedules.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FATECRP.Schedules.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

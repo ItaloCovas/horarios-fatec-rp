@@ -4,6 +4,7 @@ using FATECRP.Schedules.Domain.Mediator;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using FATECRP.Schedules.Domain.Schedules.Commands;
+using FATECRP.Schedules.Domain.Schedules.Queries;
 
 namespace FATECRP.Schedules.Services.Api.Controllers
 {
@@ -23,6 +24,14 @@ namespace FATECRP.Schedules.Services.Api.Controllers
         {
             await _mediator.SendCommand(command, cancellationToken);
             return ResponseApi();
+        }
+
+        [Authorize(AuthenticationSchemes = "Firebase")]
+        [HttpGet("schedules/get")]
+        public async Task<IActionResult> Get(CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Query(new GetAllSchedulesQuery(), cancellationToken);
+            return ResponseApi(result);
         }
     }
 }

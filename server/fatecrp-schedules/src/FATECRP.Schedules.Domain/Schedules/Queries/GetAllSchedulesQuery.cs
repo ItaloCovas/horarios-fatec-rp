@@ -1,15 +1,15 @@
 ﻿using MediatR;
 using FATECRP.Schedules.Domain.Schedules.DTOs;
 using FATECRP.Schedules.Domain.Storage;
+using FATECRP.Schedules.Domain.Storage.DTOs;
 
 namespace FATECRP.Schedules.Domain.Schedules.Queries;
 
-public class GetAllSchedulesQuery : IRequest<StudentGradeDto>
+public class GetAllSchedulesQuery : IRequest<List<LessonTimeDto>>
 {
-    public List<AcronymTimeDto> acronymTimes = new();
 }
 
-public class GetAllPermissionsQueryHandler : IRequestHandler<GetAllSchedulesQuery, StudentGradeDto>
+public class GetAllPermissionsQueryHandler : IRequestHandler<GetAllSchedulesQuery, List<LessonTimeDto>>
 {
     private readonly IFirestoreService _firestoreService;
 
@@ -18,12 +18,9 @@ public class GetAllPermissionsQueryHandler : IRequestHandler<GetAllSchedulesQuer
         _firestoreService = firestoreService;
     }
 
-    public async Task<StudentGradeDto> Handle(GetAllSchedulesQuery request, CancellationToken cancellationToken)
+    public async Task<List<LessonTimeDto>> Handle(GetAllSchedulesQuery request, CancellationToken cancellationToken)
     {
-        var lessons = await _firestoreService.GetSchedulesByAcronymAndTime(request.acronymTimes);
-
-        var grade = new StudentGradeDto();
-        return grade;
+        return await _firestoreService.GetAllSchedules();
     }
 }
 

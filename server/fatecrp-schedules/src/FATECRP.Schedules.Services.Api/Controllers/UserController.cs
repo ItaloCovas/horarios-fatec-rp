@@ -20,8 +20,8 @@ public class UserController : ApiController
     [HttpPost("user/scrape")]
     public async Task<IActionResult> Scrape([FromBody] ScrapeUserCommand command, CancellationToken cancellationToken)
     {
-        var sucess = await _mediator.SendCommand(command, cancellationToken);
-        return ResponseApi();
+        var grade = await _mediator.SendCommand(command, cancellationToken);
+        return ResponseApi(grade);
     }
 
     [HttpPost("user/login")]

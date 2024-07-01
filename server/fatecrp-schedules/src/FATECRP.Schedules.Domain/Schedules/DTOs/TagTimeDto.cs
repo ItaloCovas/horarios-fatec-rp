@@ -2,10 +2,10 @@
 
 namespace FATECRP.Schedules.Domain.Schedules.DTOs;
 
-public class AcronymTimeDto
+public class TagTimeDto
 {
-    [JsonProperty("acronym")]
-    public string Acronym { get; set; } = null!;
+    [JsonProperty("tag")]
+    public string Tag { get; set; } = null!;
 
     [JsonProperty("lessonTime")]
     public string LessonTime { get; set; } = null!;

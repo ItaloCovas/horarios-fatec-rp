@@ -3,9 +3,10 @@ import { AdminHeader } from '../../components/AdminHeader/AdminHeader';
 import { useAdminClasses } from './useAdminClasses';
 import { Input } from '../../components/Input';
 import { SpreadsheetButton } from '../../components/SpreadsheetButton/SpreadsheetButton';
+import { Spinner } from '../../components/Spinner';
 
 export function AdminClasses() {
-  const { control, errors, handleSubmit, filename, setFilename } =
+  const { control, errors, handleSubmit, filename, setFilename, isLoading } =
     useAdminClasses();
 
   return (
@@ -73,10 +74,11 @@ export function AdminClasses() {
               <div className="flex justify-center items-center">
                 <button
                   type="submit"
-                  className="bg-red-primary text-white w-4/5 py-2 mt-3 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
+                  className="bg-red-primary flex items-center justify-center gap-x-2 text-white w-4/5 py-2 mt-3 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
                   onClick={() => {}}
                 >
                   CARREGAR
+                  {isLoading && <Spinner className="w-6 h-6" />}
                 </button>
               </div>
             </form>

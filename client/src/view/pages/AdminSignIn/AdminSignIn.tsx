@@ -1,9 +1,10 @@
 import { Input } from '../../components/Input';
 import { Logo } from '../../components/Logo';
+import { Spinner } from '../../components/Spinner';
 import { useAdminSignIn } from './useAdminSignIn';
 
 export function AdminSignIn() {
-  const { errors, register, handleSubmit } = useAdminSignIn();
+  const { errors, register, handleSubmit, isLoading } = useAdminSignIn();
 
   return (
     <main className="bg-[#F9F9F9] h-screen w-screen flex justify-center items-center">
@@ -30,10 +31,11 @@ export function AdminSignIn() {
         <div className="w-full">
           <button
             type="submit"
-            className="bg-red-primary text-white w-full py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
+            className="bg-red-primary flex items-center justify-center gap-x-2 text-white w-full py-2 px-10 rounded-2xl text-lg font-bold hover:bg-red-secondary ease-in-out  duration-200"
             onClick={handleSubmit}
           >
             ENTRAR
+            {isLoading && <Spinner className="w-6 h-6" />}
           </button>
         </div>
       </div>

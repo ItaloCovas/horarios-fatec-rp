@@ -44,6 +44,7 @@ type FormData = z.infer<typeof schema>;
 
 export function useAdminClasses() {
   const [filename, setFilename] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const {
     handleSubmit: hookFormSubmit,
@@ -63,6 +64,7 @@ export function useAdminClasses() {
     const reader = new FileReader();
     reader.onload = async (e) => {
       try {
+        setIsLoading(true);
         const arrayBuffer = e.target?.result as ArrayBuffer;
         const binaryString = new Uint8Array(arrayBuffer).reduce(
           (acc, byte) => acc + String.fromCharCode(byte),
@@ -87,10 +89,12 @@ export function useAdminClasses() {
         }));
 
         await schedulesService.updateSchedules({ schedules: transformedJson });
+        setIsLoading(false);
         reset();
         setFilename('');
         toast.success('Arquivo salvo com sucesso, cheque os novos horários.');
       } catch {
+        setIsLoading(false);
         toast.error('Erro em salvar o arquivo, tente novamente.');
       }
     };
@@ -103,5 +107,6 @@ export function useAdminClasses() {
     handleSubmit,
     setFilename,
     filename,
+    isLoading,
   };
 }

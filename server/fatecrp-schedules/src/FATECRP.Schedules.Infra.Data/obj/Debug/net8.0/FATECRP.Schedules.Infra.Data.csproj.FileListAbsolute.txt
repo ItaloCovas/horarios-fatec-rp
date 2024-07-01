@@ -16,6 +16,42 @@ C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\refin
 C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.pdb
 C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.genruntimeconfig.cache
 C:\dev\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\ref\FATECRP.Schedules.Infra.Data.dll
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.deps.json
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.runtimeconfig.json
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.dll
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.pdb
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Domain.dll
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Domain.pdb
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.csproj.AssemblyReference.cache
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.AssemblyInfo.cs
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.sourcelink.json
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP..09AA6889.Up2Date
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.dll
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\refint\FATECRP.Schedules.Infra.Data.dll
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.pdb
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.genruntimeconfig.cache
+C:\Users\arthur.galanti\OneDrive - SEB - Sistema Educacional Brasileiro\Área de Trabalho\fatecrp-schedules\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\ref\FATECRP.Schedules.Infra.Data.dll
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.deps.json
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.runtimeconfig.json
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.dll
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.pdb
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Domain.dll
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Domain.pdb
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.csproj.AssemblyReference.cache
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.AssemblyInfoInputs.cache
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.AssemblyInfo.cs
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.csproj.CoreCompileInputs.cache
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.sourcelink.json
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP..09AA6889.Up2Date
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.dll
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\refint\FATECRP.Schedules.Infra.Data.dll
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.pdb
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\FATECRP.Schedules.Infra.Data.genruntimeconfig.cache
+C:\dev\shared-repos\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\obj\Debug\net8.0\ref\FATECRP.Schedules.Infra.Data.dll
 C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.deps.json
 C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.runtimeconfig.json
 C:\Users\italo\OneDrive\Área de Trabalho\horarios-fatec-rp\server\fatecrp-schedules\src\FATECRP.Schedules.Infra.Data\bin\Debug\net8.0\FATECRP.Schedules.Infra.Data.dll

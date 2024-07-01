@@ -2,7 +2,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMemo, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { mockedInfo } from '../../../mocks/mockedInfo';
+import {
+  Class,
+  SignInUserData,
+} from '../../../services/usersService/signInUser';
 
 const schema = z.object({
   type: z.enum([
@@ -32,22 +35,22 @@ export function useClasses() {
   );
 
   const currentDayIndex = useMemo(() => new Date().getDay() - 1, []);
+
   const currentDay = useMemo(
     () => daysOfWeek[currentDayIndex],
     [currentDayIndex, daysOfWeek],
   );
 
-  const dayMapping: { [key: string]: keyof typeof mockedInfo.dias } =
-    useMemo(() => {
-      return {
-        'Segunda-feira': 'segunda',
-        'Terça-feira': 'terça',
-        'Quarta-feira': 'quarta',
-        'Quinta-feira': 'quinta',
-        'Sexta-feira': 'sexta',
-        Sábado: 'sabado',
-      };
-    }, []);
+  const dayMapping: { [key: string]: string } = useMemo(() => {
+    return {
+      'Segunda-feira': 'Segunda-Feira',
+      'Terça-feira': 'Terça-Feira',
+      'Quarta-feira': 'Quarta-Feira',
+      'Quinta-feira': 'Quinta-Feira',
+      'Sexta-feira': 'Sexta-Feira',
+      Sábado: 'Sábado',
+    };
+  }, []);
 
   const months: string[] = useMemo(
     () => [
@@ -80,13 +83,17 @@ export function useClasses() {
   });
 
   const selectedDay = watch('type');
-  const [data, setData] = useState(mockedInfo.dias[dayMapping[currentDay]]);
+  const [data, setData] = useState<Class[]>([]);
   const [locationTitle, setLocationTitle] = useState<string>('');
   const [imageURL, setImageURL] = useState<string>('');
 
   useEffect(() => {
-    if (selectedDay) {
-      setData(mockedInfo.dias[dayMapping[selectedDay]]);
+    const storedData = localStorage.getItem('hrftcrp:udcls');
+    if (storedData) {
+      const parsedData: SignInUserData = JSON.parse(storedData);
+      if (selectedDay && parsedData?.dias) {
+        setData(parsedData.dias[dayMapping[selectedDay]]);
+      }
     }
   }, [selectedDay, dayMapping]);
 
