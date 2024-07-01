@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FATECRP.Schedules.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4deeb932857b80e25cc597ba330e9fc079c5411")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+021bacfd7ca1a039a9563b2edcd39fd8d38558ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("FATECRP.Schedules.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FATECRP.Schedules.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
