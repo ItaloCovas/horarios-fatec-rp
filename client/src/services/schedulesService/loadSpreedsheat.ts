@@ -1,27 +1,16 @@
 import { api } from '../api';
+import { Schedules } from './updateSchedules';
 
-// export interface SignInUserParams {
-//   ra: string;
-//   password: string;
-// }
-
-// interface SignInUserData {
-//   email: string;
-//   token: string;
-//   refreshToken: string;
-//   expireIn: number;
-// }
-
-interface Schedules {
+interface Spreadsheet {
   succeeded: boolean;
   errors: string | null;
-  //   data: SignInAdminData;
+  data: Schedules[];
 }
 
 export async function loadSpreedsheat() {
-  const { data } = await api.get<Schedules>('/schedules');
+  const { data } = await api.get<Spreadsheet>('/schedules/get');
 
   if (data.succeeded) {
-    return data;
+    return data.data;
   }
 }

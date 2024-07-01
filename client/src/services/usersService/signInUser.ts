@@ -51,7 +51,6 @@ export async function signInUser(
   if (data.succeeded) {
     return data.data;
   } else {
-    console.error(data.errors);
     return null;
   }
 }

@@ -1,15 +1,23 @@
 import { FaFileDownload } from 'react-icons/fa';
-import { useSpreadsheetButton } from './useSpreadsheetButton';
+import { ButtonHTMLAttributes } from 'react';
+import { Spinner } from '../Spinner';
 
-export function SpreadsheetButton() {
-  const { loadSpreedsheet } = useSpreadsheetButton();
+interface SpreadsheetButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  loading: boolean;
+}
 
+export function SpreadsheetButton(props: SpreadsheetButtonProps) {
   return (
     <button
       className="bg-red-primary h-[50px] w-[50px] rounded-full absolute bottom-2 right-2 flex justify-center items-center hover:bg-red-700 transition-all ease-in-out duration-150"
-      onClick={loadSpreedsheet}
+      {...props}
     >
-      <FaFileDownload className="text-white h-5" />
+      {props.loading ? (
+        <Spinner className="w-6 h-6" />
+      ) : (
+        <FaFileDownload className="text-white h-5" />
+      )}
     </button>
   );
 }

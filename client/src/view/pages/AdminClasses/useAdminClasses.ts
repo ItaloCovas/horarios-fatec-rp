@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 import toast from 'react-hot-toast';
 import { schedulesService } from '../../../services/schedulesService';
 
@@ -31,7 +32,6 @@ const schema = z.object({
     .any()
     .refine((file) => file, 'O arquivo é obrigatório.')
     .refine((file) => {
-      console.log('file', file);
       return ACCEPTED_FILE_TYPES.includes(file?.type);
     }, 'Apenas .xls e .xlsx são suportados.')
     .refine(
@@ -45,6 +45,7 @@ type FormData = z.infer<typeof schema>;
 export function useAdminClasses() {
   const [filename, setFilename] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isFileLoading, setIsFileLoading] = useState<boolean>(false);
 
   const {
     handleSubmit: hookFormSubmit,
@@ -60,7 +61,6 @@ export function useAdminClasses() {
   });
 
   const handleSubmit = hookFormSubmit(async (data: FormData) => {
-    console.log(data, 'filee');
     const reader = new FileReader();
     reader.onload = async (e) => {
       try {
@@ -101,6 +101,45 @@ export function useAdminClasses() {
     reader.readAsArrayBuffer(data.file);
   });
 
+  const handleDownload = async () => {
+    try {
+      setIsFileLoading(true);
+      const response = await schedulesService.loadSpreedsheat();
+      setIsFileLoading(false);
+      const schedules = response;
+
+      const transformedData = schedules!.map((schedule) => ({
+        Curso: schedule.course,
+        Periodo: schedule.semester,
+        Disciplina: schedule.lessonName,
+        DiaSemana: schedule.weekDay,
+        Horario: schedule.lessonTime,
+        Professor: schedule.teacherName,
+        Sala: schedule.classroom,
+        Andar: schedule.floor,
+        Tag: schedule.tag,
+        ClassroomLink: schedule.classroomLink,
+      }));
+
+      const worksheet = XLSX.utils.json_to_sheet(transformedData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Schedules');
+
+      const excelBuffer = XLSX.write(workbook, {
+        bookType: 'xlsx',
+        type: 'array',
+      });
+
+      const blob = new Blob([excelBuffer], {
+        type: 'application/octet-stream',
+      });
+      saveAs(blob, 'Aulas do Semestre.xlsx');
+    } catch (error) {
+      console.error('Error fetching schedules: ', error);
+      toast.error('Erro ao baixar o arquivo, tente novamente.');
+    }
+  };
+
   return {
     errors,
     control,
@@ -108,5 +147,7 @@ export function useAdminClasses() {
     setFilename,
     filename,
     isLoading,
+    handleDownload,
+    isFileLoading,
   };
 }

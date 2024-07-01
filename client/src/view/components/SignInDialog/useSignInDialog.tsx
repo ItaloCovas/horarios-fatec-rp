@@ -35,7 +35,6 @@ export function useSignInDialog() {
 
   const handleSubmit = hookFormSubmit(async (data: FormData) => {
     try {
-      console.log(data, 'formData');
       setIsLoading(true);
       const userData = await usersService.signInUser(data);
       setIsLoading(false);

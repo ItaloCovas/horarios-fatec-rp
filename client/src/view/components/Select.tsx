@@ -4,20 +4,15 @@ import {
   ChevronUpIcon,
   CrossCircledIcon,
 } from '@radix-ui/react-icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '../../utils/cn';
 
 interface SelectProps {
   className?: string;
-
   error?: string;
-
   placeholder?: string;
-
   options: { value: string; label: string }[];
-
   onChange(value: string): void;
-
   value?: string;
 }
 
@@ -31,6 +26,10 @@ export function Select({
 }: SelectProps) {
   const [selectedValue, setSelectedValue] = useState(value);
 
+  useEffect(() => {
+    setSelectedValue(value);
+  }, [value]);
+
   function handleSelect(value: string) {
     setSelectedValue(value);
     onChange?.(value);
@@ -41,9 +40,8 @@ export function Select({
       <div className="relative">
         <label
           className={cn(
-            'absolute z-10 top-1/2 -translate-y-1/2 left-3 text-gray-700 pointer-events-none',
-            selectedValue &&
-              'text-xs left-[13px] top-2 transition-all translate-y-0',
+            'absolute z-10 top-1/2 -translate-y-1/2 left-3 text-gray-700 pointer-events-none transition-all',
+            selectedValue && 'text-xs left-[13px] top-2 translate-y-0',
           )}
         >
           {placeholder}
@@ -56,7 +54,7 @@ export function Select({
               className,
             )}
           >
-            <RdxSelect.Value />
+            <RdxSelect.Value placeholder={selectedValue ? '' : placeholder} />
             <RdxSelect.Icon className="absolute right-3 top-1/2 -translate-y-1/2">
               <ChevronDownIcon className="w-6 h-6 text-gray-800 " />
             </RdxSelect.Icon>
@@ -93,7 +91,7 @@ export function Select({
       {error && (
         <div className="flex gap-2 items-center mt-2 text-red-900">
           <CrossCircledIcon />
-          <span className="text-xs">{error}</span>{' '}
+          <span className="text-xs">{error}</span>
         </div>
       )}
     </div>

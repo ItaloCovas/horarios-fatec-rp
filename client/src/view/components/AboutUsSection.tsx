@@ -21,13 +21,13 @@ export function AboutUsSection() {
           icon="signIn"
         />
         <AboutCard
-          title="Facilidade no acesso"
-          description="Com apenas seu RA e sua senha, tenha tudo disponível quando quiser."
+          title="Interface fluida"
+          description="O design da aplicação foca em uma experiência do usuário que seja fluida e prazerosa."
           icon="clarity"
         />
         <AboutCard
-          title="Facilidade no acesso"
-          description="Com apenas seu RA e sua senha, tenha tudo disponível quando quiser."
+          title="Criado com segurança"
+          description="Todos os seus dados são utilizados apenas para o funcionamento da aplicação. O código é aberto, aumentando ainda mais a segurança do usuário."
           icon="padLock"
         />
       </div>
